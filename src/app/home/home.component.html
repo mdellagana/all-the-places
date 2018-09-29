@@ -1,18 +1,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<div class="map-container">
-				<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
-					<agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng">
-						<agm-info-window>
-							<img [src]="webcamImage?.imageAsDataUrl" alt="">
-						</agm-info-window>
-					</agm-marker>
-				</agm-map>
-			</div>
+			<app-map></app-map>
 		</div>
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col">
 			<webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
 			 [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable" [videoOptions]="videoOptions" (cameraSwitched)="cameraWasSwitched($event)"
@@ -32,10 +24,10 @@
 			<input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
 			<button (click)="showNextWebcam(deviceId);">Activate</button>
 		</div>
-	</div>
-	<div class="row">
+	</div> -->
+	<!-- <div class="row">
 		<div class="col">
 			<img [src]="webcamImage?.imageAsDataUrl" alt="">
 		</div>
-	</div>
+	</div> -->
 </div>
