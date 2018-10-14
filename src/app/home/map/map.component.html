@@ -1,5 +1,4 @@
 <div class="map-container">
-  <h1>sdfsfsf</h1>
   <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="addMoment($event.coords.lat, $event.coords.lng, 'my title')">
     <agm-marker *ngFor="let m of moments" [latitude]="m.latitude" [longitude]="m.longitude">
       <agm-info-window>

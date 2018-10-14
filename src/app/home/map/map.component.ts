@@ -19,7 +19,6 @@ export class MapComponent implements OnInit {
   }
 
   public async getMoments() {
-    console.log('this happens');
     try {
       this.moments = await this.momentService.getMoments().toPromise();
     } catch (error) {

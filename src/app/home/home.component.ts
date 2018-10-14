@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -28,8 +29,15 @@ export class HomeComponent implements OnInit {
   // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
   // private nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
 
-  constructor() {}
 
+  mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
+
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
   public ngOnInit(): void {
     // WebcamUtil.getAvailableVideoInputs()
     // 	.then((mediaDevices: MediaDeviceInfo[]) => {
@@ -73,4 +81,8 @@ export class HomeComponent implements OnInit {
   // public get nextWebcamObservable(): Observable<boolean | string> {
   // 	return this.nextWebcam.asObservable();
   // }
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
 }
