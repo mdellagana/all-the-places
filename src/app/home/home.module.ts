@@ -5,14 +5,9 @@ import { WebcamModule } from 'ngx-webcam';
 import { HomeComponent } from './home.component';
 import { MapModule } from './map/map.module';
 
-
 @NgModule({
-	imports: [
-		CommonModule,
-		WebcamModule,
-		MapModule
-	],
-	declarations: [HomeComponent],
-	exports: [HomeComponent],
+  imports: [CommonModule, WebcamModule, MapModule],
+  declarations: [HomeComponent],
+  exports: [HomeComponent]
 })
-export class HomeModule { }
+export class HomeModule {}
