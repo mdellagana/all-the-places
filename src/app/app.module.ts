@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PictureComponent } from './picture/picture.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PictureComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

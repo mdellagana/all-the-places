@@ -1,9 +1,0 @@
-<div class="map-container">
-  <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="addMoment($event.coords.lat, $event.coords.lng, 'my title')">
-    <agm-marker *ngFor="let m of moments" [latitude]="m.latitude" [longitude]="m.longitude">
-      <agm-info-window>
-        <img [src]="webcamImage?.imageAsDataUrl" alt="">
-      </agm-info-window>
-    </agm-marker>
-  </agm-map>
-</div>
