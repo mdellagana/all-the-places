@@ -20,7 +20,11 @@ export class AuthService {
       this.afAuth.auth
         .signInWithPopup(provider)
         .then(res => {
-          resolve(res);
+          if(res.user.email === 'mdellagana@googlemail.com') {
+            resolve(res);
+          } else {
+            reject('piss off');
+          }
         }, err => {
           console.log(err);
           reject(err);
