@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
     WebcamModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD1U1IGXORTC5dLCwiS1GHpYYZEcoAV7fs'
+      apiKey: 'AIzaSyDmfs51bV-1YoB5LdL0zPit5Uh9nDJkzDs'
     })
   ],
   declarations: [MapComponent],

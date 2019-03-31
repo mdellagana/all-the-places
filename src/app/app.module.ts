@@ -14,9 +14,14 @@ import { AuthGuard } from './core/auth.guard';
 import { UserService } from './core/user.service';
 import { AuthService } from './core/auth.service';
 import { UserResolver } from './user/user.resolver';
+import { AngularMaterialModule } from './angular-material/angular-material.module';
 
 @NgModule({
-  declarations: [AppComponent, PictureComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    PictureComponent,
+    LoginComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -24,9 +29,15 @@ import { UserResolver } from './user/user.resolver';
     HomeModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularMaterialModule,
   ],
-  providers: [AuthGuard, AuthService, UserService, UserResolver],
+  providers: [
+    AuthGuard,
+    AuthService,
+    UserService,
+    UserResolver
+  ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
